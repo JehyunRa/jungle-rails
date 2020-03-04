@@ -11,5 +11,6 @@ module HttpAuthConcern
         authenticate_or_request_with_http_basic do |username, password|
             username == ENV['USERNAME'] && password == ENV['PASSWORD']
         end
+        # shortform: http_basic_authenticate_with name: ENV['ADMIN_KEY'], password: ENV['ADMIN_PW']
     end
 end

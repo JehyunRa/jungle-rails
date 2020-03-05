@@ -1,0 +1,12 @@
+<header class="page-header">
+  <h1>Register</h1>
+</header>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  <div>Email: <%= f.text_field :email %></div>
+  <div>Password: <%= f.password_field :password %></div>
+  <div>Password Confirmation: <%= f.password_field :password_confirmation %></div>
+  <div><%= f.submit "Submit" %></div>
+
+<% end %>

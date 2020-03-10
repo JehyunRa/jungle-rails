@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to product detail", type: :feature, js: true do
+RSpec.feature "Visitor clicks product link", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -20,7 +20,6 @@ RSpec.feature "Visitor navigates to product detail", type: :feature, js: true do
   scenario "They can access product detail" do
     # ACT
     visit root_path
-    # page.find('.title', match: :first).click
 
     within('.product', match: :first) do
       within('header') do
@@ -29,18 +28,10 @@ RSpec.feature "Visitor navigates to product detail", type: :feature, js: true do
       end
     end
 
+    # VERIFY
     expect(page).to have_css '.products-show'
-
-    # click_link('#test')
-
-    # click_link 'About'
-    # click_on 'About'
-    # visit '/about'
 
     # DEBUG
     save_screenshot
-
-    # VERIFY
-    # expect(page).to have_css 'products-show'
   end
 end
